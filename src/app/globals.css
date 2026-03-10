@@ -1,27 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-ink: #0A0A0A;
+  --color-canvas: #FAFAF7;
+  --color-accent: #E63946;
+  --color-accent-warm: #FF6B35;
+  --color-muted: #6B7280;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E5E0;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+/* Utility classes using CSS vars */
+.text-ink { color: var(--color-ink); }
+.text-accent { color: var(--color-accent); }
+.text-accent-warm { color: var(--color-accent-warm); }
+.text-muted { color: var(--color-muted); }
+.bg-canvas { background-color: var(--color-canvas); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent-warm { background-color: var(--color-accent-warm); }
+.bg-surface { background-color: var(--color-surface); }
+.border-border { border-color: var(--color-border); }
+
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
