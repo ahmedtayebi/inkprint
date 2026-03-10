@@ -12,7 +12,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <HowItWorks />
-      <GallerySection />
+      {/* <GallerySection /> */}
       <WhyChooseUs />
       <OrderForm />
       <Footer />
